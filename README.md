@@ -2,11 +2,19 @@
 
 *Made with ❤️ by @SaltSpectre*
 
-A PowerShell-based service agent that manages WSL distributions by keeping them running in the background through a system tray application.
+A PowerShell-based service agent keeps a WSL distribution running in the background through a system tray application and an infinite sleep loop.
 
 ## Overview
 
 This script manages the installation, uninstallation, and operation of the WSL Service Agent. It is designed to live in the system tray and keep the specified WSL distribution running in the background.
+
+Have you ever wanted to run a service or Docker image in WSL without Docker Desktop? Does your WSL instance die because there is no interactive terminal keeping it alive? This service agent is for you! 
+
+When the WSL Service Agent launches, it creates a hidden interactive WSL terminal in which it starts the command `sleep infinity`. The practical effect of this is that it keeps the WSL distribution active in order to allow your Linux based service to run in the background. 
+
+Running the WSL Service Agent will not interfere with your normal interactions with WSL. In fact, you won't even notice it is running aside from a System Tray icon where you can manage the agent.
+
+Run multiple instances of WSL for different purposes? While WSL Service Agent is only designed to handle one WSL instance at a time, you can easily install multiple instances with different configurations and have them run in parallel. See the Configuration section for more details.
 
 ## Configuration
 
