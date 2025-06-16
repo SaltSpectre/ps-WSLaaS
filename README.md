@@ -2,7 +2,7 @@
 
 *Made with ❤️ by @SaltSpectre*
 
-A PowerShell-based service agent keeps a WSL distribution running in the background through a system tray application and an infinite sleep loop.
+A PowerShell-based service agent that keeps a WSL distribution running in the background through a system tray application and an infinite sleep loop.
 
 ## Overview
 
