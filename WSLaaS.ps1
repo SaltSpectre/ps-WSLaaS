@@ -192,6 +192,16 @@ Function Install-PSApp {
             Write-Error "Installation failed with $copyErrors errors"
             return
         }
+
+        if ($AppShortName -ne "WSLaaS") {
+            # Rename main script if necessary
+            $mainScript = Join-Path $InstallPath "WSLaaS.ps1"
+            if (Test-Path $mainScript) {
+                $newScriptName = Join-Path $InstallPath "$AppShortName.ps1"
+                Rename-Item -Path $mainScript -NewName $newScriptName -Force
+                Write-Host "Renamed main script to: $newScriptName" -ForegroundColor Green
+            }
+        }
         
         # Setup auto-start if requested
         if ($AutoStart) {
